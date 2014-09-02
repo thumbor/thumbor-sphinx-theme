@@ -1,0 +1,10 @@
+include *.txt
+include LICENSE
+recursive-include thumbor_sphinx_theme *.conf
+recursive-include thumbor_sphinx_theme *.css
+recursive-include thumbor_sphinx_theme *.eot
+recursive-include thumbor_sphinx_theme *.html
+recursive-include thumbor_sphinx_theme *.js
+recursive-include thumbor_sphinx_theme *.svg
+recursive-include thumbor_sphinx_theme *.ttf
+recursive-include thumbor_sphinx_theme *.woff

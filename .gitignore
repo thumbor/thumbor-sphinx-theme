@@ -52,3 +52,10 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+*.DS_Store
+*.sass-cache
+.ruby-version
+bower_components/
+node_modules/
+npm-debug.log
+.ropeproject
