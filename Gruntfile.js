@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 1919,
-          base: 'demo_docs/build',
+          base: 'thumbor-docs/_build/',
           livereload: true
         }
       }
@@ -62,11 +62,11 @@ module.exports = function(grunt) {
         cmd: 'bower update'
       },
       build_sphinx: {
-        cmd: 'sphinx-build demo_docs/source demo_docs/build'
+        cmd: 'sphinx-build thumbor-docs/ thumbor-docs/_build'
       }
     },
     clean: {
-      build: ["demo_docs/build"],
+      build: ["thumbor-docs/_build"],
       fonts: ["thumbor_sphinx_theme/static/fonts"]
     },
 
@@ -78,12 +78,12 @@ module.exports = function(grunt) {
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['thumbor_sphinx_theme/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
+        files: ['thumbor_sphinx_theme/**/*', 'thumbor-docs/*.rst', 'thumbor-docs/*.py'],
         tasks: ['clean:build','exec:build_sphinx']
       },
-      /* live-reload the demo_docs if sphinx re-builds */
+      /* live-reload the thumbor-docs if sphinx re-builds */
       livereload: {
-        files: ['demo_docs/build/**/*'],
+        files: ['thumbor-docs/_build/**/*'],
         options: { livereload: true }
       }
     }
