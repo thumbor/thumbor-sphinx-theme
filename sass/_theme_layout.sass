@@ -158,11 +158,15 @@
     opacity: 0
 
 
+.wy-body-for-nav
+  background: left repeat-y $section-background-color
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOERBMTRGRDBFMUUxMUUzODUwMkJCOThDMEVFNURFMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOERBMTRGRTBFMUUxMUUzODUwMkJCOThDMEVFNURFMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE4REExNEZCMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE4REExNEZDMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EwrlwAAAAA5JREFUeNpiMDU0BAgwAAE2AJgB9BnaAAAAAElFTkSuQmCC)
+  background-size: $nav-desktop-width 1px
+
 .wy-grid-for-nav
   position: absolute
   width: 100%
   height: 100%
-  top: 70px
 
 .wy-nav-side
   position: absolute
@@ -201,14 +205,14 @@
     cursor: pointer
 
 .wy-nav-content-wrap
-  margin-left: 0
-  background: white
+  margin-left: $nav-desktop-width
+  background: $section-background-color
   min-height: 100%
 
 .wy-nav-content
   padding: $gutter $gutter * 2
   height: 100%
-  max-width: 1055px
+  max-width: 800px
   margin: auto
 
 .wy-body-mask
@@ -286,67 +290,3 @@ footer
 nav.stickynav
   position: fixed
   top: 0
-
-
-.menu
-  @include box-sizing(border-box)
-  text-align: left
-  padding-left: 50px
-  @include transition(background-color 350ms ease-out)
-  position: fixed
-  top: 0
-  width: 100%
-  height: 70px
-  margin-top: 0
-  z-index: 10000
-  background-color: #282828
-  li
-    &:before
-      margin-left: 100px
-    &.current
-      a
-        color: #aaa
-    ul li a
-      color: white
-    margin-left: 25px
-    display: inline-block
-    text-transform: uppercase
-    padding: 25px 0
-    ul
-      display: none
-      -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5)
-      -moz-box-shadow:    0px 3px 3px 0px rgba(50, 50, 50, 0.5)
-      box-shadow:         0px 3px 3px 0px rgba(50, 50, 50, 0.5)
-    &:hover
-      ul
-        margin-top: 25px
-        display: block
-        position: absolute
-        background-color: #333
-        li
-          margin-left: 0
-          display: block
-          padding: 10px 20px
-          text-transform: none
-          a
-            font-size: 14px
-          &:hover
-            a
-              color: #aaa
-    &.logo
-      a
-        display: block
-        margin-top: -2px
-    a
-      font-size: 16px
-      color: #fff
-
-.search-form
-  top: 23px
-  right: 20px
-  position: absolute
-
-.toc-backref
-  padding-top: 70px
-  margin-top: -70px
-  display: inline-block
