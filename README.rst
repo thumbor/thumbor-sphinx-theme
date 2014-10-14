@@ -1,4 +1,4 @@
-.. _readthedocs.org: http://www.readthedocs.org
+.. _thumbor.org: http://www.thumbor.org
 .. _bower: http://www.bower.io
 .. _sphinx: http://www.sphinx-doc.org
 .. _compass: http://www.compass-style.org
@@ -6,19 +6,22 @@
 .. _wyrm: http://www.github.com/snide/wyrm/
 .. _grunt: http://www.gruntjs.com
 .. _node: http://www.nodejs.com
-.. _demo: http://docs.readthedocs.org
+.. _demo: http://docs.thumbor.org
 .. _hidden: http://sphinx-doc.org/markup/toctree.html
 
 **************************
-Thumbor Shpinx Demo
+Thumbor Sphinx Theme
 **************************
 
-This is a fork from `Sphinx Read the docs Theme <https://github.com/snide/sphinx_rtd_theme>`_
-customized for Thumbor`s documentation site based on sphinx_. Thanks!
+This is a mobile-friendly sphinx_ theme I made for thumbor.org_. It's
+currently in development there and includes some rtd variable checks that can be ignored
+if you're just trying to use it on your project outside of that site.
+
+**This repo also exists as a submodule within the thumbor itself**, so please make your edits to
+the SASS files here, rather than the .css files on RTD.
 
 .. image:: screen_mobile.png
     :width: 100%
-
 Installation
 ============
 
@@ -124,48 +127,3 @@ This default task will do the following **very cool things that make it worth th
 3. It'll watch for changes to the sass files and build css from the changes.
 4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
    or .css files.
-
-
-Before you create an issue
---------------------------
-
-I don't have a lot of time to maintain this project due to other responsibilities.
-I know there are a lot of Python engineers out there that can't code sass / css and
-are unable to submit pull requests. That said, submitting random style bugs without
-at least providing sample documentation that replicates your problem is a good
-way for me to ignore your request. RST unfortunately can spit out a lot of things
-in a lot of ways. I don't have time to research your problem for you, but I do
-have time to fix the actual styling issue if you can replicate the problem for me.
-
-
-Before you send a Pull Request
-------------------------------
-
-When you're done with your edits, you can run ``grunt build`` to clean out the old
-files and rebuild a new distribution, compressing the css and cleaning out
-extraneous files. Please do this before you send in a PR.
-
-Using this theme locally, then building on Read the Docs?
-==========================================================
-
-Currently if you import thumbor_sphinx_theme in your local sphinx build, then pass
-that same config to Read the Docs, it will fail, since RTD gets confused. If
-you want to run this theme locally and then also have it build on RTD, then
-you can add something like this to your config. Thanks to Daniel Oaks for this.
-
-.. code:: python
-
-    # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-    on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-    if not on_rtd:  # only import and set the theme if we're building docs locally
-        import thumbor_sphinx_theme
-        html_theme = 'thumbor_sphinx_theme'
-        html_theme_path = [thumbor_sphinx_theme.get_html_theme_path()]
-
-    # otherwise, readthedocs.org uses their theme by default, so no need to specify it
-
-TODO
-====
-* Separate some sass variables at the theme level so you can overwrite some basic colors.
-
