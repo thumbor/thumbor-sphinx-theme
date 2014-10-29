@@ -39,29 +39,26 @@
   ul
     margin-bottom: 0
   li
-    &.divide-top
-      border-top: solid 1px hsl(0, 0%, 25%)
-    &.divide-bottom
-      border-bottom: solid 1px hsl(0, 0%, 25%)
     &.current
       background: darken($section-background-color, 10%)
       a
         color: $text-medium
-        border-right: solid 1px darken($section-background-color, 20%)
-        padding: $gutter / 4 $gutter * 1.5
         &:hover
           background: darken($section-background-color, 15%)
+  li.toctree-l1 a
+    border: none
+    border-top: none
+    height: 49px
+    line-height: 49px
+    padding: 0 $gutter * 1.5
+    padding-left: $gutter -4px
+    border-top: 1px solid #e5e5e5
   // On state for the first level
   li.on a, li.current > a
     color: $text-color
-    padding: $gutter / 4 $gutter
     font-weight: bold
     position: relative
     background: $section-background-color
-    border: none
-    border-bottom: solid 1px darken($section-background-color, 20%)
-    border-top: solid 1px darken($section-background-color, 20%)
-    padding-left: $gutter -4px
     +font-smooth
     &:hover
       background: $section-background-color
@@ -99,17 +96,19 @@
 
 .wy-side-nav-search
   z-index: $z-index-popover
-  background-color: $link-color
+  background-color: $sidebar-bg-color
   text-align: center
   padding: $gutter / 2
   display: block
   color: $section-background-color
-  margin-bottom: $gutter / 2
+  border-bottom: 1px solid #e5e5e5
   input[type=text]
     width: 100%
-    border-radius: 50px
-    padding: 6px 12px
-    border-color: darken($link-color, 5%)
+    font-size: 100%
+    padding: 15px 15px
+    border-color: darken($sidebar-bg-color, 5%)
+    border-radius: 0
+    box-shadow: inset 0 0px 38px #f6f6f6
   img
     display: block
     margin: auto auto $gutter / 2 auto
@@ -175,12 +174,12 @@
   width: $nav-desktop-width
   overflow: hidden
   min-height: 100%
-  background: $menu-background-color
+  background: $sidebar-bg-color
   z-index: $z-index-popover
 
 .wy-nav-top
   display: none
-  background: $link-color
+  background: $menu-color
   color: $white
   padding: $gutter / 4 $gutter / 2
   position: relative
@@ -201,8 +200,10 @@
     border-radius: 100%
   i
     font-size: 30px
-    float: left
     cursor: pointer
+    display: table-cell
+    vertical-align: middle
+    width: 30px
 
 .wy-nav-content-wrap
   margin-left: $nav-desktop-width
@@ -253,7 +254,8 @@ footer
   .wy-body-for-nav
     background: $section-background-color
   .wy-nav-top
-    display: block
+    display: table
+    width: 100%
   .wy-nav-side
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
@@ -262,6 +264,9 @@ footer
     &.shift
       width: 85%
       left: 0
+      -webkit-box-shadow: 14px 0px 300px 150px rgba(0,0,0,0.7)
+      -moz-box-shadow: 14px 0px 300px 150px rgba(0,0,0,0.7)
+      box-shadow: 14px 0px 300px 150px rgba(0,0,0,0.7)
   .wy-nav-content-wrap
     margin-left: 0
     .wy-nav-content
